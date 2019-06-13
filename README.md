@@ -58,7 +58,7 @@ Using [plot_anomalies.py](https://github.com/JialiangShi/isolation-forest/blob/m
 
 ## Scoring results
 
-Running [score.py](https://github.com/JialiangShi/isolation-forest/blob/master/score.py), here is a sample run:
+Running [score.py](https://github.com/jenshou/isolation-forest/score.py), here is a sample run:
 
 ```
 Running noise=False improved=False
@@ -78,6 +78,4 @@ INFO cancer.csv score time 0.73s
 SUCCESS cancer.csv 1000 trees at desired TPR 75.0% getting FPR 0.2857%
 ```
 
-Due to the subsampling of the original data said and the inherent random nature of isolation forest, your results will differ even from run to run.  I'm hoping that the variance is not so high that valid programs fail the scoring, but let me know.
-
-Hooray !
+Due to the subsampling of the original data said and the inherent random nature of isolation forest, your results will differ even from run to run.
