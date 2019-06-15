@@ -4,7 +4,7 @@ from sklearn.metrics import confusion_matrix
 import sys
 import time
 
-from iforestj import IsolationTreeEnsemble, find_TPR_threshold
+from iforest import IsolationTreeEnsemble, find_TPR_threshold
 
 def score(X, y, n_trees, desired_TPR, datafile,sample_size,
           reqd_fit_time,
