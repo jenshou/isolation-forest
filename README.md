@@ -1,30 +1,28 @@
-# Isolation Forest Implementation
+# Isolation Forest Implementation in Python
 
 
-The goal of this project is to implement the original [Isolation Forest](IsolationForestPaper.pdf) algorithm by Fei Tony Liu, Kai Ming Ting, and Zhi-Hua Zhou.  (A later version of this work is also available: [Isolation-based Anomaly Detection](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.673.5779&rep=rep1&type=pdf).) 
+The goal of this project is to implement the original [Isolation Forest](IsolationForestPaper.pdf) algorithm by Fei Tony Liu, Kai Ming Ting, and Zhi-Hua Zhou from scratch.  (A later version of this work is also available: [Isolation-based Anomaly Detection](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.673.5779&rep=rep1&type=pdf).) 
 
-There are two general approaches to anomaly detection: 
+As in anamaly detection, there are two general approaches: 
 
 1. model what normal looks like and then look for nonnormal observations
-2. focus on the anomalies, which are few and different. This is the interesting and relatively-new approach taken by the authors of isolation forests.
-
-The isolation forest algorithm is original and beautiful in its simplicity; and also seems to work very well, with a few known weaknesses. The academic paper is extremely readable so you should start there.
+2. focus on the anomalies, which are few and different. This is the interesting and relatively-new approach, and the concept of isolation forest.
 
 ## Datasets
 
-For this project, we'll use three data sets:
+For this project, I used three data sets:
 
 * [Kaggle credit card fraud competition data set](https://www.kaggle.com/mlg-ulb/creditcardfraud); download, unzip to get `creditcard.csv`
 
-* Download the cancer dataset: [cancer.csv](https://github.com/JialiangShi/isolation-forest/blob/master/cancer.csv);
+* Download the cancer dataset: [cancer.csv](https://github.com/jenshou/isolation-forest/blob/master/cancer.csv);
 
-* Download the http dataset: [http.csv](https://github.com/JialiangShi/isolation-forest/blob/master/http.csv); 
+* Download the http dataset: [http.csv](https://github.com/jenshou/isolation-forest/blob/master/http.csv); 
 
 My code assumes the data files are in the same directory as the code.
 
 ## Visualization of normal versus anomaly separation
 
-Using [plot_anomalies.py](https://github.com/JialiangShi/isolation-forest/blob/master/plot_anomalies.py), you can see the results of the isolation forest trying to detect anomalies. These data sets all have known targets indicating normal versus anomaly, but this information is only used during testing and not during training. In other words, we use this information to discover how well we can separate the distribution of normal versus anomalous observations.  The section provides a number of results, but yours might look different because of the inherent randomness involved in selecting subsets of the data and constructing random trees. (click on the images to enlarge.)
+Using [plot_anomalies.py](https://github.com/jenshou/isolation-forest/blob/master/plot_anomalies.py), you can see the results of the isolation forest trying to detect anomalies. These data sets all have known targets indicating normal versus anomaly, but this information is only used during testing and not during training. In other words, we use this information to discover how well we can separate the distribution of normal versus anomalous observations.  The section provides a number of results, but yours might look different because of the inherent randomness involved in selecting subsets of the data and constructing random trees. (click on the images to enlarge.)
 
 <center>
 <table border="0">
@@ -78,4 +76,4 @@ INFO cancer.csv score time 0.73s
 SUCCESS cancer.csv 1000 trees at desired TPR 75.0% getting FPR 0.2857%
 ```
 
-Due to the subsampling of the original data said and the inherent random nature of isolation forest, your results will differ even from run to run.
+Due to the subsampling of the original data and the inherent random nature of isolation forest, the results will differ even from run to run.
